@@ -8,7 +8,7 @@ import EmployersAddForm from '../employers-add-form/employers-add-form';
 
 import './app.css'
 class App extends Component {
-
+    
     constructor(props) {
         super(props);
         this.state = {
@@ -27,18 +27,16 @@ class App extends Component {
                 data: data.filter(item => item.id !== id)
             }
         })
-    }    
+    } 
 
-    addItem = ({salary, name}) => {
+    addItem = (salary, name) => {
         const newItem = {
             name: name,
             salary: salary,
             increase: false,
             id: this.maxId++
         }
-        console.log(salary)
-        console.log(name)
-
+        
         this.setState(({data}) => {
             const newArr = [...data, newItem]
             return ({
